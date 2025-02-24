@@ -1,0 +1,14 @@
+tasks = []
+
+while True:
+    command = input("Enter command (add/list/exit): ").strip().lower()
+    if command == "add":
+        task = input("Enter task: ")
+        tasks.append(task)
+        print("Task added!")
+    elif command == "list":
+        print("\n".join(f"{i+1}. {task}" for i, task in enumerate(tasks)) or "No tasks yet.")
+    elif command == "exit":
+        break
+    else:
+        print("Unknown command.")
